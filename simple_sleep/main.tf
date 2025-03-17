@@ -14,3 +14,12 @@ resource "null_resource" "wait2" {
     command = "sleep ${var.sleep_time}"
   }
 }
+
+resource "terraform_data" "this" {
+  input = var.check
+}
+
+variable "check" {
+  type = number
+  default = 1
+}
