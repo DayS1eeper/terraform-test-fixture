@@ -9,7 +9,6 @@ not_allowed_provider = [
   "null"
 ]
 
-
 deny[reason] {
     resource := tfplan.resource_changes[_]
     action := resource.change.actions[count(resource.change.actions) - 1]
