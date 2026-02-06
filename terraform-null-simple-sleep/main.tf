@@ -21,5 +21,5 @@ resource "terraform_data" "this" {
 
 variable "check" {
   type = number
-  default = 1
+  default = 2
 }
