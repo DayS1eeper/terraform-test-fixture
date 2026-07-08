@@ -17,10 +17,10 @@ generate "main" {
   path      = "main.tf"
   if_exists = "overwrite"
   contents  = <<EOF
-resource "terraform_data" "sleep" {
-  provisioner "local-exec" {
-    command = "sleep 1"
-  }
+resource "onepassword_item" "demo" {
+  vault    = "vault_id"
+  title    = "Demo Terraform Password"
+  category = "password"
 }
 EOF
 }
