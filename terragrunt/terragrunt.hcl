@@ -24,7 +24,7 @@ data "scalr_workspace_ids" "all" {
 variable "environment_id" { type = string }
 
 output "workspace_ids" {
-  value = data.scalr_workspace_ids.app_frontend.ids
+  value = data.scalr_workspace_ids.all.ids
 }
 EOF
 }
