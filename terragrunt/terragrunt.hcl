@@ -4,9 +4,9 @@ generate "versions" {
   contents  = <<EOF
 terraform {
   required_providers {
-    scalr = {
-      source  = "Scalr/scalr"
-      version = "~> 3.0"
+    onepassword = {
+      source  = "1password/onepassword"
+      version = "3.3.1"
     }
   }
 }
@@ -17,14 +17,10 @@ generate "main" {
   path      = "main.tf"
   if_exists = "overwrite"
   contents  = <<EOF
-data "scalr_workspace_ids" "all" {
-  names          = ["*"]
-  environment_id = var.environment_id
-}
-variable "environment_id" { type = string }
-
-output "workspace_ids" {
-  value = data.scalr_workspace_ids.all.ids
+resource "terraform_data" "sleep" {
+  provisioner "local-exec" {
+    command = "sleep 1"
+  }
 }
 EOF
 }
